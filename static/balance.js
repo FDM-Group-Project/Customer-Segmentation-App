@@ -73,6 +73,7 @@ let ctx0 = document.getElementById('myChart_c0').getContext('2d')
 let mychart0 = new Chart(ctx0, {
   type: 'bar',
   fill: true,
+  
   data: {
     labels: x_values.split(','),
     datasets: [

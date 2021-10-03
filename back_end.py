@@ -22,3 +22,17 @@ def read_csv_file():
     initial_df = pd.read_csv(obj['Body'])
     
     return initial_df
+
+
+def read_cluster_analyze_csv():
+    bucket = "handwrittenresponss3"
+    file_name = "analysis.csv"
+
+    s3 = client1
+    obj = s3.get_object(Bucket= bucket, Key= file_name) 
+    dataFrame = pd.read_csv(obj['Body'])
+    
+    return dataFrame
+
+def download_customer_ids(cluster):
+    return ""

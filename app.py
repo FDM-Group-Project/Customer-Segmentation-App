@@ -1,8 +1,8 @@
+from insights import get_best_cluster, get_cluster_insights, get_customer_ids
 from summery import get_summary
 from botocore.parsers import BaseXMLResponseParser
 from pandas.core.frame import DataFrame
-from balance_stats import cluster0_summery, cluster1_summery, cluster2_summery
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request,jsonify
 
 
 app = Flask(__name__)
@@ -50,6 +50,41 @@ def get_attribute():
                        attribute=attribute_selected
                        )
 
+@app.route('/insights')
+def load_insights():
+    return render_template('insights.html')
+
+
+
+
+best_cluster=""
+
+@app.route('/insights', methods=['POST'])
+def handle_data():
+    print('Inside Handle Data')
+    action_selected = request.form['selected_action']
+    price = request.form['price']
+    is_allow = request.form.get('allowInstallments')
+    if is_allow=='None':
+        is_allow="No"
+    else:
+        is_allow="Yes"
+
+    best_cluster = get_best_cluster(action_selected,price,is_allow)
+    print('Best Cluster',best_cluster)
+
+    #call a method to get the customer_Ids of the best cluster 
+    get_customer_ids(best_cluster)
+
+    return render_template('insights.html',
+                            best_cluster=best_cluster,
+                            )
+
+@app.route("/your/webservice")
+def my_webservice():
+    c = request.args.get('cluster')
+    print('Best Cluster is '+c)
+    return jsonify(result=get_cluster_insights(c))
 
 if __name__ == 'main':
     app.run(debug=True)

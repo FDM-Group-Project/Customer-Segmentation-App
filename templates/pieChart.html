@@ -32,8 +32,8 @@
     <div class="container">
       <!-- Navbar brand -->
       <a class="navbar-brand me-2" href="https://mdbgo.com/">
-        <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="16" alt="" loading="lazy"
-          style="margin-top: -1px;" />
+        <img src="https://th.bing.com/th/id/R.bd85189c046cb72b799a7ff1346182ce?rik=HXUnIU8oJx2gkQ&pid=ImgRaw&r=0"
+          height="50" alt="" loading="lazy" style="margin-top: -1px;" />
       </a>
 
       <!-- Toggle button -->
@@ -47,20 +47,22 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
+            <a class="nav-link" href="https://customersegmentationapp.herokuapp.com/">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://customersegmentationapp.herokuapp.com/insights">Insights</a>
           </li>
         </ul>
         <!-- Left links -->
 
         <div class="d-flex align-items-center">
-          <button type="button" class="btn btn-link px-3 me-2">
+          <button type="button" class="btn btn-link px-3 me-2" disabled>
             Login
           </button>
-          <button type="button" class="btn btn-primary me-3">
+          <button type="button" class="btn btn-primary me-3" disabled>
             Sign up for free
           </button>
-          <a class="btn btn-dark px-3" href="https://github.com/mdbootstrap/mdb-ui-kit" role="button"><i
-              class="fab fa-github"></i></a>
+          <a class="btn btn-dark px-3" href="" role="button"><i class="fab fa-github"></i></a>
         </div>
       </div>
       <!-- Collapsible wrapper -->
@@ -69,21 +71,18 @@
   </nav>
   <!-- Navbar -->
 
-    <!--Succeed These labels are used to pas the data from html to javaScript-->
-    <label id="x_values" name="{{x_values[i]}}" hidden>{{x_values}}</label>
-    <label id="y_values_c0" name="{{y_values_c0[i]}}" hidden>{{y_values_c0}}</label>
-    <label id="y_values_c1" name="{{y_values_c1[i]}}" hidden>{{y_values_c1}}</label>
-    <label id="y_values_c2" name="{{y_values_c2[i]}}" hidden>{{y_values_c2}}</label>
-    <label id="y_values_c3" name="{{y_values_c3[i]}}" hidden>{{y_values_c3}}</label>
-    <label id="y_values_c4" name="{{y_values_c4[i]}}" hidden>{{y_values_c4}}</label>
-    <label id="attribute" name="{{attribute}}" hidden>{{attribute}}</label>
+  <!--Succeed These labels are used to pas the data from html to javaScript-->
+  <label id="x_values" name="{{x_values[i]}}" hidden>{{x_values}}</label>
+  <label id="y_values_c0" name="{{y_values_c0[i]}}" hidden>{{y_values_c0}}</label>
+  <label id="y_values_c1" name="{{y_values_c1[i]}}" hidden>{{y_values_c1}}</label>
+  <label id="y_values_c2" name="{{y_values_c2[i]}}" hidden>{{y_values_c2}}</label>
+  <label id="y_values_c3" name="{{y_values_c3[i]}}" hidden>{{y_values_c3}}</label>
+  <label id="y_values_c4" name="{{y_values_c4[i]}}" hidden>{{y_values_c4}}</label>
+  <label id="attribute" name="{{attribute}}" hidden>{{attribute}}</label>
 
 
 
   <div class="container1">
-    <div class="A">
-      <h1>Grap App</h1>
-    </div>
     <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
         aria-expanded="false">
@@ -116,14 +115,21 @@
           <li><a class="dropdown-item" href="#" onclick="attributeChange(this);">cash_advance</a></li>
           <li><a class="dropdown-item" href="#" onclick="attributeChange(this);">purchases_frequency</a></li>
           <li><a class="dropdown-item" href="#" onclick="attributeChange(this);">oneoff_purchases_frequency</a></li>
-          <li><a class="dropdown-item" href="#" onclick="attributeChange(this);">purchases_installments_frequency</a></li>
+          <li><a class="dropdown-item" href="#" onclick="attributeChange(this);">purchases_installments_frequency</a>
+          </li>
           <input type="hidden" id="selected_attribute" name="selected_attribute" value=""></input>
         </form>
       </ul>
     </div>
+
+    <div class="A">
+
+      <h4>Analyzing On... <span class="badge bg-dark">{{attribute}}</span></h4>
+    </div>
+
   </div>
 
-  
+
   <div class="container">
     <div class="card">
       <div class="card-body">
@@ -151,7 +157,7 @@
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Segment 04</h5>
+        <h5 class="card-title">Segment 04 </h5>
         <canvas id="myChart_c3" width="600px" height="600px"></canvas>
 
       </div>
@@ -168,6 +174,7 @@
 
   <!--Link to an external java script file-->
   <script type="text/javascript" src="{{ url_for('static', filename='balance.js') }}"></script>
+
 
 
 </body>
