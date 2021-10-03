@@ -5,10 +5,8 @@ $("document").ready(function () {
 function load_charts() {
   jsonObject = null
   best_cluster = document.getElementById('best_cluster').textContent
-  $.getJSON('http://127.0.0.1:5000/your/webservice?cluster=' + best_cluster,
+  $.getJSON('https://customersegmentationapp.herokuapp.com/your/webservice?cluster=' + best_cluster,
     function (data, textStatus, jqXHR) {
-      alert('Hiii' + best_cluster)
-
       build_chart(data)
     }
   )
@@ -21,7 +19,7 @@ function setActionType(obj) {
   attribute = obj.text;
   document.getElementById('selected_action').value = attribute;
 
-  //alert(attribute,best_cluster)
+  
 
   document.getElementById("selected_action_header").innerHTML = attribute;
 }
@@ -65,7 +63,7 @@ function build_chart(json_objec) {
 }
 
 function setBestCluster(obj) {
-  //alert(obj.text)
+ 
 }
 
 async function download_csv(Obj) {
@@ -77,8 +75,7 @@ async function download_csv(Obj) {
   cluster7_link = "https://handwrittenresponss3.s3.amazonaws.com/Cluster7.csv"
 
   cluster = document.getElementById('best_cluster').textContent
-  //alert(cluster)
-
+  
   download_link = ""
 
   if (cluster == '0') {
