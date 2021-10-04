@@ -78,7 +78,7 @@ let mychart0 = new Chart(ctx0, {
     labels: x_values.split(','),
     datasets: [
       {
-        label: "Population (millions)",
+        label: "",
         backgroundColor: chart_colours,
         data: y_values_c0.split(',')
       }
@@ -101,7 +101,7 @@ let mychart1 = new Chart(ctx1, {
     labels: x_values.split(','),
     datasets: [
       {
-        label: "Population (millions)",
+        label: "",
         backgroundColor: chart_colours,
         data: y_values_c1.split(',')
       }
@@ -123,8 +123,7 @@ let mychart2 = new Chart(ctx2, {
   data: {
     labels: x_values.split(','),
     datasets: [
-      {
-        label: "Population (millions)",
+      { label: "",
         backgroundColor: chart_colours,
         data: y_values_c2.split(',')
       }
@@ -147,7 +146,7 @@ let mychart3 = new Chart(ctx3, {
     labels: x_values.split(','),
     datasets: [
       {
-        label: "Population (millions)",
+        label: "",
         backgroundColor: chart_colours,
         data: y_values_c3.split(',')
       }
@@ -170,7 +169,7 @@ let mychart4 = new Chart(ctx4, {
     labels: x_values.split(','),
     datasets: [
       {
-        label: "Population (millions)",
+        label: "",
         backgroundColor: chart_colours,
         data: y_values_c4.split(',')
       }

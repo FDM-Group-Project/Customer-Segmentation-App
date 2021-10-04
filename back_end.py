@@ -9,8 +9,8 @@ my_config = Config(
 client1 = boto3.client(
     's3',
     config=my_config,
-    aws_access_key_id='AKIAXTEHORJDSSEUR4VG',
-    aws_secret_access_key='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'
+    aws_access_key_id='AKIAXTEHORJDXDOLVSPS',
+    aws_secret_access_key='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'
 )
 #method to connect to s3 and read the csv file
 def read_csv_file():
