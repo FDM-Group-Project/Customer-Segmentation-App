@@ -5,7 +5,7 @@ $("document").ready(function () {
 function load_charts() {
   jsonObject = null
   best_cluster = document.getElementById('best_cluster').textContent
-  $.getJSON('http://127.0.0.1:5000/your/webservice?cluster=' + best_cluster,
+  $.getJSON('https://customersegmentationapp.herokuapp.com/your/webservice?cluster=' + best_cluster,
     function (data, textStatus, jqXHR) {
       build_chart(data)
     }
