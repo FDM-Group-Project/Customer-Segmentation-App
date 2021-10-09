@@ -68,11 +68,11 @@ function setBestCluster(obj) {
 
 async function download_csv(Obj) {
 
-  cluster0_link = "https://handwrittenresponss3.s3.amazonaws.com/Cluster0.csv"
-  cluster1_link = "https://handwrittenresponss3.s3.amazonaws.com/Cluster1.csv"
-  cluster4_link = "https://handwrittenresponss3.s3.amazonaws.com/Cluster4.csv"
-  cluster6_link = "https://handwrittenresponss3.s3.amazonaws.com/Cluster6.csv"
-  cluster7_link = "https://handwrittenresponss3.s3.amazonaws.com/Cluster7.csv"
+  cluster0_link = "https://samplebucketfdm.s3.amazonaws.com/Cluster0.csv"
+  cluster1_link = "https://samplebucketfdm.s3.amazonaws.com/Cluster1.csv"
+  cluster4_link = "https://samplebucketfdm.s3.amazonaws.com/Cluster4.csv"
+  cluster6_link = "https://samplebucketfdm.s3.amazonaws.com/Cluster6.csv"
+  cluster7_link = "https://samplebucketfdm.s3.amazonaws.com/Cluster7.csv"
 
   cluster = document.getElementById('best_cluster').textContent
   
