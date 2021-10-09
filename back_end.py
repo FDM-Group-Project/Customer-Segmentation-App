@@ -9,12 +9,12 @@ my_config = Config(
 client1 = boto3.client(
     's3',
     config=my_config,
-    aws_access_key_id='AKIAXTEHORJDXDOLVSPS',
-    aws_secret_access_key='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'
+    aws_access_key_id='AKIAXMVNWMQXUJSX6H55',
+    aws_secret_access_key='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'
 )
 #method to connect to s3 and read the csv file
 def read_csv_file():
-    bucket = "handwrittenresponss3"
+    bucket = "samplebucketfdm"
     file_name = "clustered_customers_new.csv"
 
     s3 = client1
@@ -25,7 +25,7 @@ def read_csv_file():
 
 
 def read_cluster_analyze_csv():
-    bucket = "handwrittenresponss3"
+    bucket = "samplebucketfdm"
     file_name = "analysis.csv"
 
     s3 = client1
